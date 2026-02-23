@@ -1,0 +1,573 @@
+@font-face {
+  font-family: 'Quadrant';
+  src: url('assets/QuadrantTextMono-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Telenova';
+    src: url('assets/Telenova2-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hieronimus';
+    src: url('assets/Hieronimus-Regular.woff') format('woff');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HieronimusI';
+    src: url('assets/Hieronimus-Italic.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Miraz';
+    src:
+         url('assets/MirazVF.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+html, body {
+	overscroll-behavior: none;
+	-webkit-overflow-scrolling: touch;
+  scrollbar-visibility: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { display: none }
+body {
+  padding:0;
+  padding-top: 5vw;
+  height:100vh;
+}
+
+body ::selection {
+  background:lightgrey;
+  color:black;
+}
+
+.part2 {
+  background: black;
+  color:white;
+  width:75%;
+  text-align: center;
+  margin-bottom:0.5vw;
+  margin-top:4.8vh;
+}
+
+#miraz {
+position: relative;
+top:1vw;
+font-family: 'Miraz';
+font-size:20vw;
+}
+
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: black;
+  margin: 0;
+  font: inherit;
+  color: darkorange;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid black;
+  border-radius: 0.15em;
+  transform: translateY(0.075em);
+  display: inline-grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: darkorange;
+}
+
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+    outline: max(2px, 0.15em) solid black;
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid black;
+  outline-offset: max(2px, 0.15em);
+}
+
+.fontvalue5 {
+
+    position: relative;
+    color: white;
+    font-family: 'Quadrant';
+    width: 100%;
+    display: inline;
+
+}
+
+.fontvalue6 {
+    background-color: black;
+    color: white;
+    font-family: 'Quadrant';
+    border: none;
+}
+
+.type5 {
+    max-height: 60vH;
+    background-color: black;
+    color: white;
+    padding-top: 5vH;
+    padding-left: 5vW;
+    padding-right: 5vW;
+    margin-bottom: 1.1vH;
+    width: 75%;
+    font-size: 70px;
+    font-family: 'HieronimusI';
+    text-align: center;
+    line-height: 140%;
+    box-shadow: none;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.on {
+    font-family: 'HieronimusI';
+
+}
+
+.off {
+    font-family: 'Hieronimus';
+}
+
+.showcontent {
+position: absolute;
+top: calc(3.8vh - 1px);
+right: calc(-0.5vw - 1px);
+}
+
+.showcontent3 span{
+font-size: 1.2em;
+    color: white;
+    background-color: black;
+    line-height: 115%;
+}
+
+.showcontent span a {
+  font-size:1.2em;
+  color:white;
+  background-color: black;
+  line-height:115%;
+}
+
+.type6 {
+    max-height: 60vH;
+    background-color: black;
+    color: white;
+    padding-top: 5vH;
+    padding-left: 5vW;
+    padding-right: 5vW;
+    margin-bottom: 1.1vH;
+    width: 75%;
+    font-size: 70px;
+    font-family: 'Telenova';
+    text-align: center;
+    line-height: 110%;
+    box-shadow: none;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.slidecontainer {
+    padding-top: -4.8vh;
+    padding: 20px;
+    background-color: black;
+}
+
+.description.one.fontvalue5 {
+  padding-top: 0vh;
+}
+
+.description.ten.fontvalue5 {
+  padding-top: 0vh;
+}
+
+.slider2 {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 0%;
+    background: darkorange;
+    cursor: pointer;
+}
+
+.slider2::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: darkorange;
+    cursor: pointer;
+}
+
+button {
+  all: unset
+}
+
+li {
+  list-style: none;
+  position:relative;
+}
+
+a {
+  color:black;
+  text-decoration: none;
+  z-index: 1000;
+  /* cursor: crosshair; */
+}
+
+a:hover {
+  text-decoration: line-through;
+  transition: .5s ease;
+}
+
+.navigation {
+  display:grid;
+  position: fixed;
+  top:0; /* .3vw; */
+  padding-top:0vw;
+/*   margin-top:-0.5vw; */
+  padding-bottom: 0;
+  line-height: 3.8vh;
+  grid-template-columns:repeat(5,1fr) 0.45vw;
+  grid-template-rows:3.8vh;
+  grid-gap:0.15vw;
+  z-index:2;
+  width:calc(100% - 16px);
+  background:rgba(0,0,0, .5);
+  /* mix-blend-mode: color-dodge; */
+}
+
+.navigation a{
+  z-index: 100;
+}
+
+.up {
+  display: block;
+  position: relative;
+}
+
+.up a {
+mix-blend-mode: difference;
+filter:blur(6px);
+
+}
+
+.up a:hover {
+filter:blur(0px);
+}
+
+.navigation-titles{
+  font-family: 'Quadrant';
+  position: sticky;
+  top:0.1vh;
+  text-indent: 0.2vw;
+}
+
+.quadrant{
+  font-family: 'Quadrant';
+  font-size:1em;
+  text-indent:0vw;
+}
+
+.info {
+  grid-column:1/2;
+  grid-row:1/2;
+  position: relative;
+}
+
+.navigation-titles.info span:hover + p {
+  display:block;
+  color:white;
+  margin: 0;
+}
+
+.navigation-titles.info p {
+  font-family: Quadrant;
+  position: absolute;
+  left:0vw;
+  display: none;
+  z-index:+1;
+  font-size:1.2em;
+  line-height:115%;
+  text-indent: 0em;
+  top: calc(3.8vh - 2.3px);
+}
+
+.navigation-titles.info p span {
+  background: black;
+}
+
+.aboutme {
+  font-size: 2.1em;
+  color:white;
+}
+
+
+
+.navigation-titles.update span:hover + p {
+  display:block;
+  color:white;
+  margin: 0;
+}
+
+.navigation-titles.update p {
+  font-family: 'Quadrant';
+  display: none;
+  z-index:+1;
+  position: absolute;
+  top: calc(3.8vh - 1px);
+  right: calc(-0.5vw - 1px);
+  font-size:1.2em;
+  line-height:115%;
+  text-indent: 0em;
+  text-align: right;
+}
+
+.navigation-titles.update p span {
+  background: black;
+}
+
+
+.works {
+  /* display: inline; */
+  position: relative;
+  float:left;
+  grid-column:2/5;
+  grid-row:1/2;
+}
+
+
+#vl {
+  margin: 0;
+  top:0;
+  left:0;
+  border-right:0;
+  width:75vw;
+  background-color: darkorange;
+  min-height: 0;
+  position: fixed;
+  display: block;
+  z-index: 0;
+}
+
+.myworks {
+	display:inline-block;
+	position: relative;
+  margin-top:0;
+  top:-10.75vh;
+	max-width: calc(100% - 0.6vw);
+	font-size:1.1em;
+	font-family:'Quadrant';
+  z-index: 1;
+}
+.mywork {
+	margin-bottom: -4.8vh;
+}
+
+
+
+.mywork img {
+  position: relative;
+  width: 80%;
+  margin-bottom: 0.6vw;
+  object-fit: cover;
+  vertical-align: middle;
+/*   transform: translateZ(0); */
+  display:inline-block;
+}
+
+.mywork .slideshow:hover {
+  filter:none;
+}
+
+.mywork .slideshow {
+	position: relative;
+	width: 75%;
+	padding-top: 4.8vh;
+	white-space: nowrap;
+	overflow-x: hidden;
+	display: inline-block;
+/* -webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 3s; */
+
+}
+/* .mywork:first-child .slideshow { padding-top: 0 } */
+
+/* @-webkit-keyframes fade {
+  from {opacity: .3}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+} */
+
+.mywork .slideshow img { width: 100% }
+.mywork .slideshow > span {
+	position: absolute;
+	top:40%;
+	width: auto;
+	padding: 0vw;
+  margin:2vw;
+	font-size: 1.1em;
+	color: #fff;
+	background-color: transparent;
+	transition: .9s ease;
+	user-select: none;
+  font-family: inherit;
+}
+
+.mywork .slideshow > span:hover {
+	color:  #ff8c57;
+}
+
+.mywork:last-child .slideshow { padding-top: 6vh }
+.mywork:last-child .description{ padding-top: 6vh }
+
+
+
+.mywork .slideshow > span.prev {
+	left: 0;
+	border-radius:0%;
+  font-family: Quadrant;
+  font-size: 5em;
+  /* cursor: w-resize; */
+}
+
+.mywork .slideshow > span.next:after { content: '»' }
+.mywork .slideshow > span.next {
+	right: 0;
+	border-radius: 0%;
+  font-family: Quadrant;
+  font-size: 5em;
+  /* cursor: e-resize; */
+}
+
+.mywork .slideshow > span.prev:after { content: '«' }
+.mywork .description p,
+.mywork .description h1 {
+	font-size: 2.3vh;
+	margin-top: 0;
+	margin-bottom: 1em;
+  font-family: Quadrant;
+}
+
+
+.mywork .description h1 span {
+	color: black;
+	background: none;
+
+}
+.description  span {
+  background: black;
+  color: white;
+  line-height:115%;
+}
+
+.description  span p {
+  text-indent: 2em;
+}
+
+.text {
+  text-indent:0;
+}
+
+.description {
+  display: inline-block;
+  position: absolute;
+  max-width: 20%;
+  max-height:50vw;
+  margin-left:0.6vw;
+  padding-top: 4.8vh;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.description::-webkit-scrollbar {
+  display: none;
+}
+
+.mywork.dwanascie .part2 {
+  padding-top:30px;
+
+}
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100vw;
+  position: relative;
+  margin: auto;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3 px 0 0 3px;
+  cursor: e-resize;
+}
+.prev {
+  cursor: w-resize;
+}
+
+/* On hover, add a background color */
+.prev:hover, .next:hover {
+
+  color: black;
+} */
+
+
+
+@media only screen and (max-width:1100px){
+
+  .mywork .description p,
+  .mywork .description h1 {
+  	font-size: 2.1vh;
+  	margin-top: 0;
+  	margin-bottom: 1em;
+    font-family: 'Quadrant';
+  }
+
+}

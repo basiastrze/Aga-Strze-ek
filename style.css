@@ -1,0 +1,348 @@
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Times, serif;
+  color: #000;
+  background-color: #fff;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  align-items: flex-start;
+  height: 100vh;
+  /* overflow: hidden; /* <- this can clip content margins */ */
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex: 0 0 450px;       /* fixed width */
+  padding: 20px;
+  position: sticky;
+  top: 0;                /* crucial for sticky */
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;      /* scroll if content is taller than viewport */
+  background: #fff;      /* optional for readability */
+}
+
+/* SIDEBAR HEADINGS */
+.sidebar h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* SIDEBAR MENU */
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin: 6px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: font-style 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  font-style: italic;
+}
+
+/* Big menu items: Bio, Works, Contact */
+.sidebar a[data-section="bio"],
+.sidebar a[id="works-toggle"],
+.sidebar a[data-section="contact"] {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.sidebar a[data-section="stopka"] {
+  font-size:1.3em;
+}
+/* Submenu items under Works */
+.works-menu li a,
+.works-menu li ul a {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* HIDE / SHOW SUBMENUS */
+.works-menu,
+.dyplom-menu,
+.matki-menu,
+.stopka-menu,
+.book-menu {
+  display: none;
+  padding-left: 15px;
+}
+
+
+.works-menu.show,
+.dyplom-menu.show,
+.matki-menu.show,
+.stopka-menu.show,
+.book-menu.show {
+  display: block;
+}
+
+/* CONTENT AREA */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;   /* scroll independently */
+  max-height: 100vh;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.2; /* ensure full viewport scroll */
+}
+
+/* LIST HEADINGS */
+.content .list-heading {
+  margin-top: 1.2em;
+  margin-bottom: 0; /* tight gap before list */
+}
+
+.content ul {
+  padding-left: 1.2em;
+}
+
+.content p,
+.content ul {
+  margin-bottom: 1.2em;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+/* LISTS */
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.column-left blockquote {
+  /* font-size: 1.6rem; */
+  font-family: Times, serif;
+  /* color:blue; */
+  align-items: center;
+}
+
+.blue {
+  color:black;
+}
+
+.main-quote {
+  /* font-size: 1.3rem; */
+  margin: 40px 0;
+}
+
+/* SECTIONS */
+.content section {
+  display: none;
+}
+
+.content section.active-section {
+  display: block;
+}
+
+/* IMAGES */
+.content img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.content img.bio-image {
+  width: 220px !important;
+}
+
+.content img.matki-image {
+  width: 320px !important;
+}
+
+/* SPECIAL LINK STYLING */
+.sidebar #home {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.sidebar #home:hover,
+.sidebar #home:active {
+  font-style: normal;
+  color: black;
+}
+
+.sidebar ul ul {
+  padding-left: 15px;   /* second level */
+}
+
+.sidebar ul ul ul {
+  padding-left: 30px;   /* third level */
+}
+.sidebar a[data-section="stopka"] {
+  font-size:1.3em;
+}
+
+video {
+  margin-bottom: 20px;
+}
+
+.slider {
+  position: relative;
+  margin: 2em 0;
+  width: 100%;      /* take full width of content */
+  max-width: 100%;  /* don’t limit to 800px */
+}
+
+
+.slides-container {
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;   /* maintain aspect ratio */
+}
+
+.slider .slides-container { position: relative; }
+
+.slider .slide { display: none; }
+.slider .slide.active { display: block; }
+.slider .slide img { width: 100%; height: auto; display: block; }
+
+.slider button.prev,
+.slider button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider button.prev { left: 5%; }
+.slider button.next { right: 5%; }
+
+.slider button:hover { background-color: rgba(0,0,0,0.7); }
+
+
+/*
+.sidebar a {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.sidebar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: yellow;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.sidebar a:hover::after,
+.sidebar a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
+
+/* Submenus hidden initially */
+.works-menu,
+.dyplom-menu,
+.matki-menu,
+.stopka-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding-left: 25px;
+}
+
+/* When active, expand smoothly */
+.works-menu.show,
+.dyplom-menu.show,
+.matki-menu.show,
+.stopka-menu.show {
+  max-height: 1000px; /* big enough for content */
+}
+
+#home-landing {
+  min-height: 100vh;
+}
+
+#home-landing img {
+  width: 80%;       /* change this number */
+  height: auto;
+}
+
+
+.cv,
+.cv div {
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+ .cv-item {
+   display: grid;
+   grid-template-columns: 70px 1fr;
+   margin-bottom: 4px;
+ }
+
+  .cv-section {
+    margin-bottom: 2em;
+  }
+
+  .cv-year {
+    grid-column: 1;
+  }
+
+  .cv-text {
+    grid-column: 2;
+  }
+
+  .cv-heading {
+    margin-top: 1.5em;
+  }
