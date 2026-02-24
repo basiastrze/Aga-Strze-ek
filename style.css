@@ -7,6 +7,7 @@
 
 body {
   font-family: Times, serif;
+  font-weight: bold;
   color: #000;
   background-color: #fff;
 }
@@ -15,7 +16,7 @@ body {
 .container {
   display: flex;
   align-items: flex-start;
-  height: 100vh;
+  /* min-height: 100vh; */
   /* overflow: hidden; /* <- this can clip content margins */ */
 }
 
@@ -34,7 +35,6 @@ body {
 /* SIDEBAR HEADINGS */
 .sidebar h1 {
   font-size: 2.5em;
-  font-weight: bold;
   margin-bottom: 30px;
 }
 
@@ -51,7 +51,6 @@ body {
 .sidebar a {
   text-decoration: none;
   color: black;
-  font-weight: bold;
   transition: font-style 0.2s ease;
 }
 
@@ -65,18 +64,19 @@ body {
 .sidebar a[id="works-toggle"],
 .sidebar a[data-section="contact"] {
   font-size: 2.5em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .sidebar a[data-section="stopka"] {
-  font-size:1.3em;
+  font-size:1.4em;
 }
 /* Submenu items under Works */
 .works-menu li a,
 .works-menu li ul a {
   font-size: 1.4em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
+
 
 /* HIDE / SHOW SUBMENUS */
 .works-menu,
@@ -101,11 +101,10 @@ body {
 .content {
   flex: 1;
   padding: 20px;
-  overflow-y: auto;   /* scroll independently */
-  max-height: 100vh;
-  font-size: 1.3em;
-  font-weight: bold;
-  line-height: 1.2; /* ensure full viewport scroll */
+  max-height: none; */
+  font-size: 1.4em;
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 /* LIST HEADINGS */
@@ -116,11 +115,15 @@ body {
 
 .content ul {
   padding-left: 1.2em;
+  font-size: 1.4em;
+  font-weight: normal;
 }
 
 .content p,
 .content ul {
   margin-bottom: 1.2em;
+  font-size: 1.4em;
+  font-weight: normal;
 }
 
 /* SECTION HEADINGS */
@@ -143,6 +146,8 @@ body {
   font-family: Times, serif;
   /* color:blue; */
   align-items: center;
+  font-size: 1.4em;
+  font-weight: normal;
 }
 
 .blue {
@@ -152,6 +157,7 @@ body {
 .main-quote {
   /* font-size: 1.3rem; */
   margin: 40px 0;
+  font-size:1.4em;
 }
 
 /* SECTIONS */
@@ -183,7 +189,7 @@ body {
 
 /* SPECIAL LINK STYLING */
 .sidebar #home {
-  font-weight: bold;
+  /* font-weight: bold; */
   font-style: normal;
 }
 
@@ -201,11 +207,28 @@ body {
   padding-left: 30px;   /* third level */
 }
 .sidebar a[data-section="stopka"] {
-  font-size:1.3em;
+  font-size:1.4em;
 }
 
 video {
   margin-bottom: 20px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 16 / 9;   /* modern, cleaner solution */
+  margin: 20px 0;
+}
+
+.video-wrapper iframe {
+  width: 100vw;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.content .video-wrapper {
+  width: 100% !important;
 }
 
 .slider {
@@ -320,8 +343,7 @@ video {
 
 .cv,
 .cv div {
-  font-size: 1.3em;
-  font-weight: bold;
+  font-size: 1.4em;
   line-height: 1.2;
 }
 
@@ -345,4 +367,23 @@ video {
 
   .cv-heading {
     margin-top: 1.5em;
+  }
+
+  .site-footnote {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .content .site-footnote img {
+    width: auto !important;
+    height: 40px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    object-fit: contain;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: 500px !important;
+    display: block !important;
   }
