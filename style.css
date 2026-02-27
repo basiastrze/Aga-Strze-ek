@@ -119,8 +119,7 @@ body {
   font-weight: normal;
 }
 
-.content p,
-.content ul {
+.content p {
   margin-bottom: 1.2em;
   font-size: 1.4em;
   font-weight: normal;
@@ -142,9 +141,8 @@ body {
 }
 
 .column-left blockquote {
-  /* font-size: 1.6rem; */
   font-family: Times, serif;
-  /* color:blue; */
+
   align-items: center;
   font-size: 1.4em;
   font-weight: normal;
@@ -155,9 +153,8 @@ body {
 }
 
 .main-quote {
-  /* font-size: 1.3rem; */
   margin: 40px 0;
-  font-size:1.4em;
+  /* font-size:1.4em; */
 }
 
 /* SECTIONS */
@@ -341,16 +338,17 @@ video {
 }
 
 
-.cv,
-.cv div {
-  font-size: 1.4em;
+/* .cv {
   line-height: 1.2;
-}
+} */
 
  .cv-item {
    display: grid;
-   grid-template-columns: 70px 1fr;
-   margin-bottom: 4px;
+  grid-template-columns: 70px 1fr;
+  margin-bottom: 4px;
+  font-size: 1.4em;
+  line-height: 1.2;
+  font-weight: normal;
  }
 
   .cv-section {
@@ -387,3 +385,131 @@ video {
     height: 500px !important;
     display: block !important;
   }
+
+
+  /* Sticky footer */
+.site-footnote {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: white; /* możesz zmienić */
+  padding: 5px 0;
+  z-index: 1000;
+}
+
+.site-footnote img {
+  max-height: 40px; /* dostosuj */
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE (phones)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Stack layout */
+  .container {
+    flex-direction: column;
+  }
+
+  .column-left blockquote {
+    font-size: 1em;
+  }
+
+  /* Sidebar becomes top block */
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: 100%;
+    flex: none;
+    padding: 15px;
+  }
+
+  /* Smaller name */
+  .sidebar h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  /* Smaller main menu */
+  .sidebar a[data-section="bio"],
+  .sidebar a[id="works-toggle"],
+  .sidebar a[data-section="contact"] {
+    font-size: 1.8em;
+  }
+
+  /* Submenu size */
+  .works-menu li a,
+  .works-menu li ul a {
+    font-size: 1.2em;
+  }
+
+  /* Content full width */
+  .content {
+    padding: 15px;
+    font-size: 1.1em;
+  }
+
+  /* Prevent text inflation inside content */
+  .content p,
+  .content ul,
+  .cv-item {
+    font-size: 1em;
+  }
+
+  /* CV grid tighter */
+  .cv-item {
+    grid-template-columns: 60px 1fr;
+    gap: 10px;
+  }
+
+  /* Two columns become one */
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Videos correct width */
+  .video-wrapper,
+  .video-wrapper iframe {
+    width: 100% !important;
+  }
+
+  /* Footer smaller */
+  .site-footnote img {
+    max-height: 30px;
+  }
+
+}

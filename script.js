@@ -12,6 +12,23 @@ const bookMenu = document.querySelector('.book-menu');
 const bookToggle = document.getElementById('book-toggle');
 const homeLink = document.getElementById('home');
 const contentContainer = document.querySelector('.content');
+const footerLogo = document.getElementById("kpo-footer");
+const modal = document.getElementById("kpo-modal");
+const closeBtn = document.querySelector(".close");
+
+footerLogo.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 // Utility to close all submenus except one (optional)
 function closeAllSubmenus(except = null) {
