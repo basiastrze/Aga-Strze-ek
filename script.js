@@ -253,3 +253,35 @@ document.addEventListener('keydown', function (e) {
 
   activeSlider.currentSlide = current;
 });
+
+/* =========================
+   AUTO HIDE FOOTER (2s)
+   ========================= */
+
+const footer = document.querySelector('.site-footnote');
+let inactivityTimer;
+
+function showFooter() {
+  footer.style.opacity = '1';
+  footer.style.pointerEvents = 'auto';
+}
+
+function hideFooter() {
+  footer.style.opacity = '0';
+  footer.style.pointerEvents = 'none';
+}
+
+function resetInactivityTimer() {
+  showFooter();
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(hideFooter, 2000);
+}
+
+// Detect mouse movement
+document.addEventListener('mousemove', resetInactivityTimer);
+
+// Optional: also detect scrolling
+document.addEventListener('scroll', resetInactivityTimer);
+
+// Start hidden after 2 seconds
+inactivityTimer = setTimeout(hideFooter, 2000);

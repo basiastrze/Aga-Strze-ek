@@ -12,6 +12,10 @@ body {
   background-color: #fff;
 }
 
+.site-footnote {
+  transition: opacity 0.5s ease;
+}
+
 /* CONTAINER */
 .container {
   display: flex;
@@ -172,7 +176,7 @@ body {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -394,7 +398,7 @@ video {
   left: 0;
   width: 100%;
   text-align: center;
-  background: white; /* możesz zmienić */
+  background: rgba(255, 255, 255, 0.8); /* możesz zmienić */
   padding: 5px 0;
   z-index: 1000;
 }
